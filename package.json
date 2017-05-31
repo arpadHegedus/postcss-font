@@ -1,0 +1,25 @@
+{
+  "name": "postcss-font",
+  "description": "A postcss plugin to add font related properties in one line",
+  "version": "1.0.0",
+  "author": {
+    "name": "Arpad Hegedus",
+    "email": "hegedus.arpad@gmail.com",
+    "web": "http://arpadhegedus.com"
+  },
+  "maintainers": [
+    {
+      "name": "Arpad Hegedus",
+      "email": "hegedus.arpad@gmail.com",
+      "web": "http://arpadhegedus.com"
+    }
+  ],
+  "main": "index.js",
+  "repository" : { 
+    "type": "git", 
+    "url": "https://github.com/arpadHegedus/postcss-font.git"
+  },
+  "dependencies": {
+    "postcss": "^6.0.1"
+  }
+}
