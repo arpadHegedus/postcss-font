@@ -13,7 +13,7 @@ npm install postcss-font
 
 ```css
 body {
-    // font: {font-size}
+    // font: {font-size}, {font-style}, {font-weight}, {line-height}, {text-align}, {font-variant}, {color}, {text-decoration}, {text-transfer}, {vertical-align}, {font-family}, {word-wrap}, {letter-spacing}, {word-spacing}, {text-indent}, {white-space}, {font-stretch}, {direction}, {unicode-bidi}
     font: 13px, 1.5, bold, italic, center, red
 }
 ```
