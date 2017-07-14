@@ -1,7 +1,7 @@
 /**
  * POSTCSS FONT
  * A postcss plugin to add font related properties in one line
- * version          1.0.0
+ * version          1.0.1
  * author           Arpad Hegedus <hegedus.arpad@gmail.com>
  */
 
