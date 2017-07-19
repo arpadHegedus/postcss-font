@@ -1,7 +1,7 @@
 {
   "name": "postcss-font",
   "description": "A postcss plugin to add font related properties in one line",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Arpad Hegedus",
     "email": "hegedus.arpad@gmail.com",

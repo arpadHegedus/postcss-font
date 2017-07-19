@@ -1,7 +1,7 @@
 /**
  * POSTCSS FONT
  * A postcss plugin to add font related properties in one line
- * version          1.0.1
+ * version          1.0.2
  * author           Arpad Hegedus <hegedus.arpad@gmail.com>
  */
 
@@ -15,7 +15,8 @@ module.exports = postcss.plugin('postcss-font', options => {
         css.walkDecls('font', decl => {
             let parent = decl.parent;
             if(!util.isRegex(decl.value, /^((normal|italic|oblique)[\s]+)?((normal|small-caps|initial|inherit)[\s]+)?((normal|bold|bolder|lighter|number|initial|inherit|100|200|300|400|500|600|700|800|900)[\s]+)?([0]|[0-9\.]+(px|cm|mm|%|ch|pica|in|em|rem|pt|pc|ex|vw|vh|vmin|vmax))([\/][0-9\.]+(px|cm|mm|%|ch|pica|in|em|rem|pt|pc|ex|vw|vh|vmin|vmax)?)?([\s]+(([0-9a-z\_\-]+)|(([\']|[\"])[0-9a-z\_\-\s]+([\']|[\"]))))((([\,][\s]+(([0-9a-z\_\-]+)|(([\']|[\"])[0-9a-z\_\-\s]+([\']|[\"])))))+)?/ig) && decl.value !== 'inherit' && decl.value !== 'initial') {
-                let value = util.filterObject(postcss.list.comma(decl.value), {
+                let declVal = (decl.value.match(/(?!\B(\(\")[^\"\(\)]*),(?![^\"\(\)]*(\)|\")\B)/ig) === null)? postcss.list.space(decl.value) : postcss.list.comma(decl.value);
+                    value = util.filterObject(declVal, {
                     'font-size':        [util.isSize],
                     'font-style':       ['normal', 'italic', 'oblique', 'initial', 'inherit'],
                     'font-weight':      ['100', '200', '300', '400', '500', '600', '700', '800', '900', 'normal', 'bold', 'bolder', 'lighter', 'initial', 'inherit'],
