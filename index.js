@@ -1,7 +1,7 @@
 /**
  * POSTCSS FONT
  * A postcss plugin to add font related properties in one line
- * version          1.0.3
+ * version          1.0.4
  * author           Arpad Hegedus <hegedus.arpad@gmail.com>
  */
 
@@ -14,7 +14,7 @@ module.exports = postcss.plugin('postcss-font', options => {
     return css => {
         css.walkDecls('font', decl => {
             let parent = decl.parent;
-            if (!util.isRegex(decl.value, /((normal|italic|oblique)[\s]+)?((normal|small-caps|initial|inherit)[\s]+)?([0-9]+(px|cm|mm|%|ch|pica|in|em|rem|pt|pc|ex|vw|vh|vmin|vmax)(([\s]+)?\/([\s]+)?[0-9]+(px|cm|mm|%|ch|pica|in|em|rem|pt|pc|ex|vw|vh|vmin|vmax)?)?)[\s]+((normal|bold|bolder|lighter|number|initial|inherit)[\s]+)?(?![0-9]).+/ig) && decl.value !== 'inherit' && decl.value !== 'initial') {
+            if (!util.isRegex(decl.value, /((normal|italic|oblique)[\s]+)?((normal|small-caps|initial|inherit)[\s]+)?([\.0-9]+(px|cm|mm|%|ch|pica|in|em|rem|pt|pc|ex|vw|vh|vmin|vmax)(([\s]+)?\/([\s]+)?[\.0-9]+(px|cm|mm|%|ch|pica|in|em|rem|pt|pc|ex|vw|vh|vmin|vmax)?)?)[\s]+((normal|bold|bolder|lighter|number|initial|inherit)[\s]+)?(?![0-9]).+/ig) && decl.value !== 'inherit' && decl.value !== 'initial') {
                 let declVal = (decl.value.match(/(?!\B(\(\")[^\"\(\)]*),(?![^\"\(\)]*(\)|\")\B)/ig) === null)? postcss.list.space(decl.value) : postcss.list.comma(decl.value);
                     value = util.filterObject(declVal, {
                     'font-size':        [util.isSize],
